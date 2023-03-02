@@ -19,10 +19,10 @@
                         <div class="col-lg-12">
                             <div class="card card-primary card-outline">
                                 <div class="card-body">
-                                    <h5 class="card-title">Selamat Datang</h5>
+                                    <h5 class="card-title">Welcome!</h5>
 
                                     <p class="card-text">
-                                        Website Perpustakaan Online Vue
+                                        Vue Library Website
                                     </p>
                                 </div>
                             </div>
