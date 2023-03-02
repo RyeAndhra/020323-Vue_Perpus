@@ -30,7 +30,7 @@
     
 
     <!-- Edit Modal -->
-    <!-- <div class="modal fade" id="EditModal" tabindex="-1" aria-labelledby="EditModalLabel" aria-hidden="true">
+    <div class="modal fade" id="EditModal" tabindex="-1" aria-labelledby="EditModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -86,7 +86,7 @@
             </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- Edit Modal End -->
 
     <navbar-component></navbar-component>
@@ -128,7 +128,7 @@
                                                 <div class="btn-group">
                                                     <button type="button" @click="GetDetail(s)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#DetailModal"> Detail </button>
                                                     <router-link :to="{path: '/editsiswa/' + s.id_siswa}" class="btn btn-warning"> Edit </router-link>
-                                                    <!-- <button type="button" @click="GetDetail(s)" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#EditModal"> Edit </button> -->
+                                                    <button type="button" @click="GetDetail(s)" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#EditModal"> Edit </button>
                                                     <button type="button" @click="DeleteSiswa(s)" class="btn btn-danger"> Delete </button>                                                      
                                                 </div>
                                             </td>
@@ -163,7 +163,7 @@ export default {
             tanggal_lahir : "",
             gender : "",
             alamat : "",
-            kelas : {},
+            kelas : [],
         }
     },  
     mounted() {
@@ -174,10 +174,17 @@ export default {
 
     },
     methods : {
-        GetSiswa() {
-            var page = 'http://localhost:8000/api/getsiswa'
-            axios.get(page).then(
-                ({data})=>{
+        // GetSiswa() {
+        //     var page = 'http://localhost:8000/api/getsiswa'
+        //     axios.get(page).then(
+        //         ({data})=>{
+        //             this.siswa = data
+        //         }
+        //     );
+        // },
+        GetSiswa : function (){
+            axios.get('http://localhost:8000/api/getsiswa').then(
+                ({data}) => {
                     this.siswa = data
                 }
             );
