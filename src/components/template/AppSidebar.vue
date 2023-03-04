@@ -18,16 +18,16 @@
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/getsiswa" class="nav-link">
+                    <router-link to="/Student" class="nav-link">
                         <i class="nav-icon fas fa-user-friends"></i>
                         <p>Student</p>
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <router-link to="/Book" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>Book</p>
-                    </a>
+                    </router-link>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">

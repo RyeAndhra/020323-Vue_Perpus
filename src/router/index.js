@@ -35,9 +35,13 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import Dashboard from '../views/DashboardView.vue'
-import UserView from '../components/siswa/UserView.vue'
+
+import StudentView from '../components/siswa/StudentView.vue'
 import TambahSiswa from '../components/siswa/TambahSiswa.vue'
 import EditSiswa from '../components/siswa/EditSiswa.vue'
+
+import BookView from '../components/buku/BookView.vue'
+import TambahBuku from '../components/buku/TambahBuku.vue'
 
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
@@ -49,20 +53,32 @@ export const routes = [
     path: '/',
     component: Dashboard
   },
+
   {
-    name: 'UserView',
-    path: '/getsiswa',
-    component: UserView
+    name: 'StudentView',
+    path: '/Student',
+    component: StudentView
   },
   {
     name: 'TambahSiswa',
-    path: '/createsiswa',
+    path: '/Student/Create',
     component: TambahSiswa
   },
   {
     name : 'EditSiswa',
     path : '/editsiswa/:id',
     component : EditSiswa
+  },
+
+  {
+    name: 'BookView',
+    path: '/Book',
+    component: BookView
+  },
+  {
+    name: 'TambahBuku',
+    path: '/Book/Create',
+    component: TambahBuku
   }
 ]
 
