@@ -15,10 +15,8 @@
                 <p class="card-text">{{ nama_kelas }}</p>
                 <h6 class="font-weight-bold">Date of Birth</h6>
                 <p class="card-text">{{ tanggal_lahir }}</p>
-
                 <h6 class="font-weight-bold">Gender</h6>
                 <p class="card-text">{{ gender }}</p>
-
                 <h6 class="font-weight-bold">Address</h6>
                 <p class="card-text">{{ alamat }}</p>
                 </div>
@@ -34,7 +32,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5 font-weight-bold" id="EditModalLabel">{{nama_siswa}}</h1>
+                <h1 class="modal-title fs-5 font-weight-bold" id="EditModalLabel">Edit Student's Data</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -42,45 +40,45 @@
                     <div class="card-body">
                         <input type="hidden" v-model="id_siswa">
                         <div class="form-group">
-                            <label>Nama Anggota</label>
+                            <label>Name</label>
                             <input type="text" class="form-control" v-model="nama_siswa">
                         </div>                                        
                         <div class="form-group">
-                            <label>Tanggal Lahir</label>
+                            <label>Date of Birth</label>
                             <b-form-datepicker id="example-datepicker" class="mb-2" v-model="tanggal_lahir"></b-form-datepicker>
                         </div>
                         <div class="form-group">
                             <div>
-                            <label>Jenis Kelamin</label>
+                            <label>Gender</label>
                             </div>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">                                                
                                 <label v-if="gender == 'L'" class="btn btn-outline-secondary active">
-                                    <input type="radio" value="L" v-model="gender" checked> Laki-laki                                                   
+                                    <input type="radio" value="L" v-model="gender" checked> Male                                                 
                                 </label>
                                 <label v-else class="btn btn-outline-secondary">
-                                    <input type="radio" value="L" v-model="gender"> Laki-laki                                                    
+                                    <input type="radio" value="L" v-model="gender"> Male                                                    
                                 </label>
                                 <label v-if="gender == 'P' " class="btn btn-outline-secondary active">
-                                    <input type="radio" value="P" v-model="gender" checked> Perempuan                                                    
+                                    <input type="radio" value="P" v-model="gender" checked> Female                                                    
                                 </label>
                                 <label v-else class="btn btn-outline-secondary">
-                                    <input type="radio" value="P" v-model="gender"> Perempuan                                                    
+                                    <input type="radio" value="P" v-model="gender"> Female                                                    
                                 </label>          
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Alamat</label>
+                            <label>Address</label>
                             <textarea rows="4" class="form-control" v-model="alamat"></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Kelas</label>
+                            <label>Class</label>
                             <select class="form-control" v-model="id_kelas">                                                   
                                 <option v-for="k in kelas" :key="k.id_kelas" :value="k.id_kelas" > {{ k.nama_kelas }}</option>
                             </select>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>
@@ -127,8 +125,9 @@
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" @click="GetDetail(s)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#DetailModal"> Detail </button>
-                                                    <router-link :to="{path: '/editsiswa/' + s.id_siswa}" class="btn btn-warning"> Edit </router-link>
-                                                    <button type="button" @click="GetDetail(s)" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#EditModal"> Edit </button>
+                                                    <!-- Edit Page Disabled -->
+                                                    <!-- <router-link :to="{path: '/editsiswa/' + s.id_siswa}" class="btn btn-warning"> Edit </router-link> -->
+                                                    <button type="button" @click="GetDetail(s.id_siswa)" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#EditModal"> Edit </button>
                                                     <button type="button" @click="DeleteSiswa(s)" class="btn btn-danger"> Delete </button>                                                      
                                                 </div>
                                             </td>
@@ -168,8 +167,7 @@ export default {
     },  
     mounted() {
         this.GetSiswa()
-        // this.GetDetail(this.$route.params.id)
-        this.GetDetail()
+        this.GetDetail(this.$route.params.id)
         this.DataKelas()
 
     },
@@ -197,7 +195,7 @@ export default {
             );
         },
         GetDetail(s){
-            axios.get('http://localhost:8000/api/detailsiswa/' + s.id_siswa).then(
+            axios.get('http://localhost:8000/api/detailsiswa/' + s).then(
                 (response) => {
                     console.log(response.data[0]);
                     this.id_siswa = response.data[0].id_siswa
@@ -245,11 +243,18 @@ export default {
                 alamat : this.alamat
             }
             axios.put('http://localhost:8000/api/updatesiswa/' + this.id_siswa , data).then(
-            (response)=>{
-                alert('Sukses Mengubah Data Siswa')
-                console.log(response)
-                this.$router.push('/getsiswa')
-            })
+                ({data}) => {
+                    swal("Your data has been updated!", {
+                        icon: "success",
+                        button: false,
+                    });
+                    this.$router.push('/getsiswa')
+                    this.siswa = data
+                    setTimeout(() => {
+                        location.reload()
+                    }, 1500)
+                }
+            )
         }
     }
 }
