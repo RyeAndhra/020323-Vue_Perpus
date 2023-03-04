@@ -105,7 +105,7 @@
                     <div class="col-md-12">
                         <div class="card card-primary card-outline">
                             <div class="card-body">
-                                <router-link class="btn btn-info mb-2" to="/createsiswa">
+                                <router-link class="btn btn-info mb-2" to="/Student/Create">
                                     <i class="fas fa-plus"></i> Create Data
                                 </router-link>
                                 <table class="table table-bordered">
@@ -124,7 +124,7 @@
                                             <td>{{ s.nama_kelas }}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <button type="button" @click="GetDetail(s)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#DetailModal"> Detail </button>
+                                                    <button type="button" @click="GetDetail(s.id_siswa)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#DetailModal"> Detail </button>
                                                     <!-- Edit Page Disabled -->
                                                     <!-- <router-link :to="{path: '/editsiswa/' + s.id_siswa}" class="btn btn-warning"> Edit </router-link> -->
                                                     <button type="button" @click="GetDetail(s.id_siswa)" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#EditModal"> Edit </button>
@@ -248,11 +248,11 @@ export default {
                         icon: "success",
                         button: false,
                     });
-                    this.$router.push('/getsiswa')
+                    this.$router.push('/Student')
                     this.siswa = data
                     setTimeout(() => {
                         location.reload()
-                    }, 1500)
+                    }, 1000)
                 }
             )
         }

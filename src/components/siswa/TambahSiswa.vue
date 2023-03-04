@@ -102,7 +102,7 @@ export default {
                         icon: "success",
                         button: false,
                     });
-                    this.$router.push('/getsiswa')
+                    this.$router.push('/Student')
                     this.siswa = data
                 }
             )
