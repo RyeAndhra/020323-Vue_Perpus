@@ -21,7 +21,7 @@
                                 <form @submit.prevent="save">
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label>Name</label>
+                                            <label>Title</label>
                                             <input type="text" class="form-control" v-model="buku.judul_buku" autocomplete="off">
                                         </div>
                                         <div class="form-group">

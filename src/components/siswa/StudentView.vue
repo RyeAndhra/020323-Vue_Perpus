@@ -195,7 +195,7 @@ export default {
             );
         },
         GetDetail(s){
-            axios.get('http://localhost:8000/api/detailsiswa/' + s).then(
+            axios.get('http://localhost:8000/api/getsiswa/' + s).then(
                 (response) => {
                     console.log(response.data[0]);
                     this.id_siswa = response.data[0].id_siswa

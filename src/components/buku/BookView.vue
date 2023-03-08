@@ -11,8 +11,7 @@
             </div>
             <div class="modal-body">
                 <div class="card-body text-justify">
-                <h6 class="font-weight-bold"> *Picture Here</h6>
-                <h6 class="font-weight-bold">Name</h6>
+                <h6 class="font-weight-bold">Title</h6>
                 <p class="card-text">{{ judul_buku }}</p>
                 <h6 class="font-weight-bold">Author</h6>
                 <p class="card-text">{{ pengarang }}</p>
@@ -37,7 +36,7 @@
                     <div class="card-body">
                         <input type="hidden" v-model="id_buku">
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>Title</label>
                             <input type="text" class="form-control" v-model="judul_buku">
                         </div>    
                         <div class="form-group">
@@ -80,7 +79,7 @@
                                     <thead>
                                         <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>Name</th>
+                                        <th>Title</th>
                                         <th>Author</th>
                                         <th>Action</th>
                                         </tr>
@@ -142,7 +141,7 @@ export default {
             );
         },
         GetDetail(b){
-            axios.get('http://localhost:8000/api/detailbuku/' + b).then(
+            axios.get('http://localhost:8000/api/getbuku/' + b).then(
                 (response) => {
                     console.log(response.data[0]);
                     this.id_buku = response.data[0].id_buku
