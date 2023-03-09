@@ -14,7 +14,7 @@
                 <h6 class="font-weight-bold">Class</h6>
                 <p class="card-text">{{ nama_kelas }}</p>
                 <h6 class="font-weight-bold">Date of Birth</h6>
-                <p class="card-text">{{ tanggal_lahir }}</p>
+                <p class="card-text">{{ tanggal_lahir | moment("DD/MM/YYYY") }}</p>
                 <h6 class="font-weight-bold">Gender</h6>
                 <p class="card-text">{{ gender }}</p>
                 <h6 class="font-weight-bold">Address</h6>
