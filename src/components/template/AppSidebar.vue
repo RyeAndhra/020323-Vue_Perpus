@@ -25,7 +25,7 @@
                 </li>
                 <li class="nav-item">
                     <router-link to="/Book" class="nav-link">
-                        <i class="nav-icon fas fa-book"></i>
+                        <i class="nav-icon fas fa-regular fa-book"></i>
                         <p>Book</p>
                     </router-link>
                 </li>
@@ -39,16 +39,16 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-file-export nav-icon"></i>
-                                <p>Peminjaman</p>
-                            </a>
+                            <router-link to="/Transaction/Borrow" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>Borrow a Book</p>
+                            </router-link>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-file-import nav-icon"></i>
-                                <p>Pengembalian</p>
-                            </a>
+                            <router-link to="/Transaction" class="nav-link">
+                                <i class=" nav-icon fas fa-file-import"></i>
+                                <p>History</p>
+                            </router-link>
                         </li>
                     </ul>
                 </li>

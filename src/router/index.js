@@ -43,9 +43,13 @@ import EditSiswa from '../components/siswa/EditSiswa.vue'
 import BookView from '../components/buku/BookView.vue'
 import TambahBuku from '../components/buku/TambahBuku.vue'
 
+import TransactionView from '../components/peminjaman/TransactionView.vue'
+import HistoryView from '../components/peminjaman/HistoryView.vue'
+
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.use(require('vue-moment'))
 
 export const routes = [
   {
@@ -54,6 +58,7 @@ export const routes = [
     component: Dashboard
   },
 
+// SISWA
   {
     name: 'StudentView',
     path: '/Student',
@@ -70,6 +75,7 @@ export const routes = [
     component : EditSiswa
   },
 
+// BUKU
   {
     name: 'BookView',
     path: '/Book',
@@ -79,7 +85,19 @@ export const routes = [
     name: 'TambahBuku',
     path: '/Book/Create',
     component: TambahBuku
-  }
+  },
+
+// TRANSAKSI
+  {
+    name: 'HistoryView',
+    path: '/Transaction',
+    component: HistoryView
+  },
+  {
+    name: 'TransactionView',
+    path: '/Transaction/Borrow',
+    component: TransactionView
+  },
 ]
 
 const router = new VueRouter({
