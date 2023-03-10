@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-secondary"> Save </button>
                     </div>
                 </form>
             </div>
@@ -70,9 +70,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card card-primary card-outline">
+                        <div class="card card-dark card-outline">
                             <div class="card-body">
-                                <router-link class="btn btn-info mb-2" to="/Book/Create">
+                                <router-link class="btn btn-secondary mb-2" to="/Book/Create">
                                     <i class="fas fa-plus"></i> Create Data
                                 </router-link>
                                 <table class="table table-bordered">
@@ -92,7 +92,7 @@
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" @click="GetDetail(b.id_buku)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#DetailModal"> Detail </button>
-                                                    <button type="button" @click="GetDetail(b.id_buku)" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#EditModal"> Edit </button>
+                                                    <button type="button" @click="GetDetail(b.id_buku)" class="btn btn-warning" style="color: white" data-bs-toggle="modal" data-bs-target="#EditModal"> Edit </button>
                                                     <button type="button" @click="DeleteBuku(b)" class="btn btn-danger"> Delete </button>                                                      
                                                 </div>
                                             </td>
