@@ -2,7 +2,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="/" class="brand-link" style="text-decoration: none;">
-            <span class="brand-text font-weight-reguler">Vue Library</span>        
+            <span class="brand-text font-weight-reguler">Vue Library</span>    
         </a>
         
         <!-- Sidebar -->
@@ -13,19 +13,19 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <router-link to="/" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-home"></i>
                         <p>Dashboard</p>
                     </router-link>
                 </li>
                 <li class="nav-item">
                     <router-link to="/Student" class="nav-link">
-                        <i class="nav-icon fas fa-user-friends"></i>
+                        <i class="nav-icon fas fa-users"></i>
                         <p>Student</p>
                     </router-link>
                 </li>
                 <li class="nav-item">
                     <router-link to="/Book" class="nav-link">
-                        <i class="nav-icon fas fa-regular fa-book"></i>
+                        <i class="nav-icon fas fa-book-reader"></i>
                         <p>Book</p>
                     </router-link>
                 </li>
@@ -46,7 +46,7 @@
                         </li>
                         <li class="nav-item">
                             <router-link to="/Transaction" class="nav-link">
-                                <i class=" nav-icon fas fa-file-import"></i>
+                                <i class=" nav-icon fas fa-history"></i>
                                 <p>History</p>
                             </router-link>
                         </li>
