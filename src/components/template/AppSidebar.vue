@@ -1,7 +1,7 @@
 <template>
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="/" class="brand-link" style="text-decoration: none;">
+        <a href="/" class="brand-link" style="text-decoration: none; text-align: center;">
             <span class="brand-text font-weight-reguler">Vue Library</span>    
         </a>
         

@@ -6,7 +6,7 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <li class="nav-item" style="padding: 0 10px 0 0;">
                 <button class="btn btn-sm btn-danger"><i class="fas fa-sign-out-alt"></i> Logout</button>
             </li>
         </ul>
